@@ -19,6 +19,7 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.android.miwok.databinding.ActivityNumbersBinding;
 
@@ -49,10 +50,10 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("ten");
 
 
-        int i = 0;
         for (String word : words) {
-
-            Log.v("Words", "Word at position " + i++ + ": " + word);
+            TextView textView = new TextView(this);
+            textView.setText(word);
+            binding.rootView.addView(textView);
         }
 
     }
