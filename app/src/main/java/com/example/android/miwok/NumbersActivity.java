@@ -15,14 +15,45 @@
  */
 package com.example.android.miwok;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.example.android.miwok.databinding.ActivityNumbersBinding;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class NumbersActivity extends AppCompatActivity {
+
+    private ActivityNumbersBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_numbers);
+
+        ArrayList<String> words = new ArrayList<>();
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+        words.add("ten");
+
+
+        int i = 0;
+        for (String word : words) {
+
+            Log.v("Words", "Word at position " + i++ + ": " + word);
+        }
+
     }
 }
