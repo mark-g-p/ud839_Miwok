@@ -38,10 +38,22 @@ public class WordAdapter extends ArrayAdapter<Word> {
             binding = (ListItemBinding) listItemView.getTag();
         }
 
-        binding.miwokTextView.setText(this.getItem(position).getMiwokTranslation());
-        binding.defaultTextView.setText(this.getItem(position).getDefaultTranslation());
+        // Get the {@link Word} object located at this position in the list
+        Word currentWord = getItem(position);
+
+        // Check if an image is provided for this word or not
+        if (currentWord.hasImage()) {
+            // If an image is available, display the provided image based on the resource ID
+            binding.image.setImageResource(currentWord.getImageResourceId());
+            // Make sure the view is visible
+            binding.image.setVisibility(View.VISIBLE);
+        } else {
+            // Otherwise hide the ImageView (set visibility to GONE)
+            binding.image.setVisibility(View.GONE);
+        }
+        binding.miwokTextView.setText(currentWord.getMiwokTranslation());
+        binding.defaultTextView.setText(currentWord.getDefaultTranslation());
         listItemView.setTag(binding);
         return listItemView;
-
     }
 }
