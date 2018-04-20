@@ -55,7 +55,7 @@ public class NumbersActivity extends AppCompatActivity {
                 R.drawable.number_ten));
 
         WordAdapter adapter =
-                new WordAdapter(this, words);
+                new WordAdapter(this, words, R.color.category_numbers);
 
         binding.list.setAdapter(adapter);
 

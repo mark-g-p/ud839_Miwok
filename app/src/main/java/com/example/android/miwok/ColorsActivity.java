@@ -52,7 +52,7 @@ public class ColorsActivity extends AppCompatActivity {
                 R.drawable.color_white));
 
         WordAdapter adapter =
-                new WordAdapter(this, words);
+                new WordAdapter(this, words, R.color.category_colors);
 
         binding.list.setAdapter(adapter);
     }

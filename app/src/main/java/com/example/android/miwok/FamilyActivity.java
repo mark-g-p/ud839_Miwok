@@ -56,7 +56,7 @@ public class FamilyActivity extends AppCompatActivity {
                 R.drawable.family_grandfather));
 
         WordAdapter adapter =
-                new WordAdapter(this, words);
+                new WordAdapter(this, words, R.color.category_family);
 
         binding.list.setAdapter(adapter);
     }
