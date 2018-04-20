@@ -5,15 +5,16 @@ class Word {
     /**
      * Default translation for the word
      */
-    private String DefaultTranslation;
+    private String defaultTranslation;
 
     /**
      * Miwok translation for the word
      */
-    private String MiwokTranslation;
+    private String miwokTranslation;
 
-    private int ImageResourceId = NO_IMAGE_PROVIDED;
+    private int imageResourceId = NO_IMAGE_PROVIDED;
 
+    private int audioResourceId;
     /**
      * Constant value that represents no image was provided for this word
      */
@@ -27,10 +28,11 @@ class Word {
      * @param miwokTranslation   is the word in the Miwok language
      * @param imageId            is the id of an image resource associated with the word
      */
-    Word(String defaultTranslation, String miwokTranslation, int imageId) {
-        DefaultTranslation = defaultTranslation;
-        MiwokTranslation = miwokTranslation;
-        ImageResourceId = imageId;
+    Word(String defaultTranslation, String miwokTranslation, int imageId, int audioResourceId) {
+        this.defaultTranslation = defaultTranslation;
+        this.miwokTranslation = miwokTranslation;
+        this.imageResourceId = imageId;
+        this.audioResourceId = audioResourceId;
     }
 
     /**
@@ -40,27 +42,28 @@ class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      */
-    Word(String defaultTranslation, String miwokTranslation) {
-        DefaultTranslation = defaultTranslation;
-        MiwokTranslation = miwokTranslation;
+    Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
+        this.defaultTranslation = defaultTranslation;
+        this.miwokTranslation = miwokTranslation;
+        this.audioResourceId = audioResourceId;
     }
 
     /**
      * Get the default translation of the word.
      */
     String getDefaultTranslation() {
-        return DefaultTranslation;
+        return defaultTranslation;
     }
 
     /**
      * Get the Miwok translation of the word.
      */
     String getMiwokTranslation() {
-        return MiwokTranslation;
+        return miwokTranslation;
     }
 
     int getImageResourceId() {
-        return ImageResourceId;
+        return imageResourceId;
     }
 
     /**
@@ -68,6 +71,12 @@ class Word {
      * +
      */
     public boolean hasImage() {
-        return ImageResourceId != NO_IMAGE_PROVIDED;
+        return imageResourceId != NO_IMAGE_PROVIDED;
+    }
+    /**
+     * Get the ID od the recording of the word.
+     */
+    public int getAudioResourceId() {
+        return audioResourceId;
     }
 }
