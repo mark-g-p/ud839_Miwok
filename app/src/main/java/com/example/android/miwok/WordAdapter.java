@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
     private int colorResourceId;
+
     WordAdapter(Activity context, ArrayList<Word> words, int color) {
         super(context, 0, words);
         colorResourceId = color;

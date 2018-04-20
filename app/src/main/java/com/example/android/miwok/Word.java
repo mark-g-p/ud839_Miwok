@@ -3,22 +3,19 @@ package com.example.android.miwok;
 class Word {
 
     /**
+     * Constant value that represents no image was provided for this word
+     */
+    private static final int NO_IMAGE_PROVIDED = -1;
+    /**
      * Default translation for the word
      */
     private String defaultTranslation;
-
     /**
      * Miwok translation for the word
      */
     private String miwokTranslation;
-
     private int imageResourceId = NO_IMAGE_PROVIDED;
-
     private int audioResourceId;
-    /**
-     * Constant value that represents no image was provided for this word
-     */
-    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -73,6 +70,7 @@ class Word {
     public boolean hasImage() {
         return imageResourceId != NO_IMAGE_PROVIDED;
     }
+
     /**
      * Get the ID od the recording of the word.
      */
